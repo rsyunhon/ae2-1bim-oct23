@@ -3,13 +3,13 @@ class Vehiculos:
 	self.vehiculo= []
 
     def add_vehiculo(self, placa, propietario, cantOcup, marca, modelo, ayear):
-	vehiculo = {"placa": placa, "propietario": propietario, "marca": marca, "modelo": modelo, "Año_Fabricacion": ayear}
+	vehiculo = {"placa": placa, "propietario": propietario, "marca": marca, "modelo": modelo, "AÃ±o_Fabricacion": ayear}
         self.tasks.append(vehiculo)
         print(f'Vehiculo "{task}" agregada a la lista.')
 
     def listar_vehiculos(self):
        for index, vehiculo in enumerate(self.vehiculo, start=1):
-            print(f"Vehículo {index}: Placa: {vehiculo['placa']}, Marca: {vehiculo['marca']}, Modelo: {vehiculo['modelo']}")
+            print(f"VehÃ­culo {index}: Placa: {vehiculo['placa']}, Marca: {vehiculo['marca']}, Modelo: {vehiculo['modelo']}")
 
 
     def rem_vehiculo(self, placa):
@@ -19,7 +19,7 @@ class Vehiculos:
                 print(f"Vehiculo con placa {placa} eliminado de la Lista.")
                 break
         else:
-            print(f"No se encontró ningún vehículo con la placa {placa}.")
+            print(f"No se encontrÃ³ ningÃºn vehÃ­culo con la placa {placa}.")
 
   def mod_vehiculo(self, placa, propietario, marca, modelo, ayear):
         for vehiculo in self.vehiculo:
@@ -27,11 +27,11 @@ class Vehiculos:
 		vehiculo["propietario"]== propietario
                 vehiculo["marca"] = marca
                 vehiculo["modelo"] = modelo
-		vehiculo["Año_Fabricacion"]== ayear
-                print(f"Vehículo con placa {placa} modificado.")
+		vehiculo["AÃ±o_Fabricacion"]== ayear
+                print(f"VehÃ­culo con placa {placa} modificado.")
                 break
         else:
-            print(f"No se encontró ningún vehículo con la placa {placa}.")
+            print(f"No se encontrÃ³ ningÃºn vehÃ­culo con la placa {placa}.")
 
 
 
@@ -56,7 +56,7 @@ class Empresa
                 print(f"La empresa {placa}  has sido eliminado de la Lista.")
                 break
         else:
-            print(f"No se encontró ningún empresa con la el nombre {nombre}.")
+            print(f"No se encontrÃ³ ningÃºn empresa con la el nombre {nombre}.")
 
   def mod_empresa(self, nombre, direccion, ciudad):
         for empresa in self.empresa:
@@ -66,7 +66,7 @@ class Empresa
                 print(f"La empresa con el nomnbre {nombre} ha sido modificado.")
                 break
         else:
-            print(f"No se encontró ninguna empresa con la el nombre {nombre}.")
+            print(f"No se encontrÃ³ ninguna empresa con la el nombre {nombre}.")
 
 
 def main():
@@ -85,7 +85,7 @@ def main():
 	print("8. Modificar Empresa")
         print("9. Salir")
 
-        choice = input("Seleccione una opción: ")
+        choice = input("Seleccione una opciÃ³n: ")
 
         if choice == "1":
             placa = input("Ingrese la placa: ")
@@ -93,7 +93,7 @@ def main():
 	    cantOcup =  input("Ingrese la cantidad de Ocupantes del Vehiculo: ")
             marca = input("Ingrese la marca del vehiculo: ") 
 	    modelo = input("Ingrese el modelo de vehiculo: ") 
-	    ayear = input("Ingrese el año de Fabricacion: ")
+	    ayear = input("Ingrese el aÃ±o de Fabricacion: ")
             vehiculos_cl.add_vehiculo() 
         elif choice == "2":
             vehiculos_cl.listar_vehiculos()
@@ -102,17 +102,17 @@ def main():
             placa = input("Digite La placa del vehiculo a eliminar: ")
             vehiculos_cl.rem_vehiculo(placa)
         elif choice == "4":
-	    placa = input("Ingrese la placa del vehículo a modificar: ")
+	    placa = input("Ingrese la placa del vehÃ­culo a modificar: ")
 	    propietario = input("Ingrese el nuevo nombre del Propietario: ") 
 	    cantOcup =  input("Ingrese la nueva cantidad de Ocupantes del Vehiculo: ")
             marca = input("Ingrese la nueva marca del vehiculo: ") 
 	    modelo = input("Ingrese el nuevo modelo de vehiculo: ") 
-	    ayear = input("Ingrese el nuevo año de Fabricacion: ")
+	    ayear = input("Ingrese el nuevo aÃ±o de Fabricacion: ")
 	    vehiculos_cl.mod_vehiculo(placa, propietario, cantOcup, marca, modelo, ayear)
         elif choice == "5":
-            nombre = input("Ingrese el nombre: ")
-	    direccion = input("Ingrese la direccion de la: ") 
-	    ciudad =  input("Ingrese la ciudad: ")
+            nombre = input("Ingrese el nombre de la Empresa: ")
+	    direccion = input("Ingrese la direccion de la Empresa: ") 
+	    ciudad =  input("Ingrese la ciudad de la Empresa: ")
             empresa_cl.add_empresa
 	elif choice == "6":
             empresa_cl.listar_empresa()
@@ -121,12 +121,12 @@ def main():
 	    empresa = input("Escriba el nombre de la empresa eliminar: ")
       	    empresa_cl.rem_empresa(empresa)
 	elif choise =="8"
-	    empresa = input("Ingrese el nombre la empresa a modificar: ")
-	    direccion = input("Ingrese el nuevo nombre del Propietario: ") 
-	    ciudad =  input("Ingrese la nueva cantidad de Ocupantes del Vehiculo: ")
+	    empresa = input("Ingrese el Nombre la Empresa a modificar: ")
+	    direccion = input("Ingrese la Direccion de la Empresa: ") 
+	    ciudad =  input("Ingrese la nueva cantidad de la Empresa: ")
 	    empresa_cl.mod_empresa(empresa, direccion, ciudad)
         else:
-            print("Opción no válida. Por favor, elija una opción válida.")
+            print("OpciÃ³n no vÃ¡lida. Por favor, elija una opciÃ³n vÃ¡lida.")
 
 if __name__ == "__main__":
     main()
